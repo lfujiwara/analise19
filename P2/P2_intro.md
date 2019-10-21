@@ -25,4 +25,4 @@ Sinta-se livre pra incluir mais algoritmos importantes para prova.
 ## Dicas
 - Pra aumentar o "repertório" de ideias/algoritmos, é bom passar no geeksforgeeks:
   - [PD](https://www.geeksforgeeks.org/dynamic-programming/)
-  - [Gulosos] (https://www.geeksforgeeks.org/greedy-algorithms/)
+  - [Gulosos](https://www.geeksforgeeks.org/greedy-algorithms/)
