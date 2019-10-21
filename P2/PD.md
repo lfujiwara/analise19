@@ -20,5 +20,21 @@ Podemos pensar na PD da seguinte forma:
 
 Agora é simples, pra evitar de repetir problemas, é só calcular <img src="/P2/tex/09d819a43c6e2990856e40dbda09f893.svg?invert_in_darkmode&sanitize=true" align=middle width=13.666351049999989pt height=14.15524440000002pt/>, depois <img src="/P2/tex/988584bba6844388f07ea45b7132f61c.svg?invert_in_darkmode&sanitize=true" align=middle width=13.666351049999989pt height=14.15524440000002pt/> e assim por diante. Também é interessante setar <img src="/P2/tex/8495bd709e23d579b8854276d0cbdd62.svg?invert_in_darkmode&sanitize=true" align=middle width=47.425697549999995pt height=14.15524440000002pt/>, daí é correto usar <img src="/P2/tex/935fd358f00dae9d33d158ff520f8f75.svg?invert_in_darkmode&sanitize=true" align=middle width=191.4612579pt height=24.65753399999998pt/> pra simplificar o código.
 
+Eis o código:
+
+```c++
+// Indexando a partir do 0, isso nao e pseudo-codigo, pelo amor de deus
+int cut_this_shit(vector<int> p, int n) {
+    vector<int> c(p.size()); // Guardar os custos aqui
+    c[0] = 0; // Caso base
+    for (int i = 1; i < n; i++) c[i] = p[i];
+    for (int i = 2; i < n; i++)
+        for (int j = 0; j < i-1; j++)
+            c[i] = max(c[i],c[j] + c[i - j]);
+    return c[n-1];
+}
+// Precisa adaptar pra devolver os cortes, mas o grosso eh isso ai
+```
+
 
 
