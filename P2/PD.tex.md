@@ -20,5 +20,21 @@ Podemos pensar na PD da seguinte forma:
 
 Agora é simples, pra evitar de repetir problemas, é só calcular $c_0$, depois $c_1$ e assim por diante. Também é interessante setar $c_i = p_i$, daí é correto usar $c_i = \max_{j = 1,\dots,i}\left(c_{j} + c_{i -j}\right)$ pra simplificar o código.
 
+Eis o código:
+
+```c++
+// Indexando a partir do 0, isso nao e pseudo-codigo, pelo amor de deus
+int cut_this_shit(vector<int> p, int n) {
+    vector<int> c(p.size()); // Guardar os custos aqui
+    c[0] = 0; // Caso base
+    for (int i = 1; i < n; i++) c[i] = p[i];
+    for (int i = 2; i < n; i++)
+        for (int j = 0; j < i-1; j++)
+            c[i] = max(c[i],c[j] + c[i - j]);
+    return c[n-1];
+}
+// Precisa adaptar pra devolver os cortes, mas o grosso eh isso ai
+```
+
 
 
