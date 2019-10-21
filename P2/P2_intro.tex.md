@@ -21,3 +21,8 @@ Sinta-se livre pra incluir mais algoritmos importantes para prova.
   - Escalonamento (_Single Machine Scheduling_, cuidado, pra mais de uma máquina é um problema bem mais complicado)
   - Huffman (_Huffman coding_)
   - Árvore Geradora Mínima / Kruskal (_MST/Kruskal_)
+  
+## Dicas
+- Pra aumentar o "repertório" de ideias/algoritmos, é bom passar no geeksforgeeks:
+  - [PD](https://www.geeksforgeeks.org/dynamic-programming/)
+  - [Gulosos](https://www.geeksforgeeks.org/greedy-algorithms/)
