@@ -1,1 +1,8 @@
-<img src="/tex/db1493849929a7591e604356ddaae91c.svg?invert_in_darkmode&sanitize=true" align=middle width=70.35373289999998pt height=22.831056599999986pt/>
+# Análise 2019
+Esse repositório deve guardar material para MAC0338, como listas e provas resolvidas.
+
+## Contribuir
+1. Pull
+2. Crie/edite os arquivos `.tex.md`, o app `texify` vai converter as equações em volta de "$" e criar um svg numa pasta no mesmo diretório.
+3. Coloque as imagens em uma pasta `./media`
+4. Crie seu pull request
