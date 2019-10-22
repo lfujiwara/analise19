@@ -56,6 +56,9 @@ Agora precisamos quebrar o problema maior nesses subproblemas:
 
 - Tome $d$ como o vetor que guarda as dimensões das matrizes, daí $d_{i-1}$ e $d_{i}$, então a matriz $M_i$ é $d_{i-1} \times d_i$.
 - Tome o custo da multiplicação das matrizes de $i$ até $j$ como $c_{i,j}$.
-
 - Podemos quebrar a multiplicação $M_1\dots M_n$ em $(M_1 \dots M_i)(M_{i+1}\dots M_n)$ com $i$ variando de 1 até $n-1$ e calculamos o resultado, que será dado por $\max_{i=1,\dots,n-1}\left(c_{1,i} + c_{i+1,n}\right)$.
-- Caso base: 
+- Caso base: $c_{i,i} = 0$ e $c_{i,i+1} = d_{i-1}d_{i}d_{i+1}$.
+- PD: $c_{i,j} = \min_{k = i,\dots,j}(c_{i,k} + d_{i-1}d_{k}d_{j} + c_{k+1,j})$
+
+TODO: Algoritmo para colocar os parênteses na expressão => Ideia: Marcar ponto de divisão `bracket[i][j]`, i.e., para o subproblema $c_{i,j}$ a solução ótima é cortar a expressão em `bracket[i][j]`.
+
