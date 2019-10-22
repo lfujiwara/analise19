@@ -22,10 +22,10 @@ int main() {
 
   cout << pd[104] << endl;
 
-}```
+}
+```
 
 ## Exercício 4
-
 Seja $G$ um grafo conexo com custo $c_e$ para cada aresta $e$. Fixe uma aresta $f$ de $G$. Prove que $f$ está em alguma MST do grafo se, e somente se, $f$ tem custo mínimo dentre todas as arestas de algum corte de $G$.
 
 1. $f$ está em alguma MST do grafo $\Rightarrow$ $f$ tem custo mínimo dentre todas as arestas de algum corte de $G$
