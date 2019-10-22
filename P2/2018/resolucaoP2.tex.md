@@ -25,7 +25,20 @@ int main() {
 }
 ```
 
+## Exercício 3
+
+```
+> Ordene x
+> S é um conjunto vazio de pares
+> Para i de 1 até n/2:
+	> Insira em S o par (x[i],x[n-i+1])
+> Devolva S
+```
+
+Considere uma solução ótima que não contenha $(x_1,x_n)$, então essa solução contém $(x_1,x_a)$ e $(x_b,x_n)$. Então troque os pares por $(x_1,x_n)$  e $(x_a,x_b)$, é claro que $x_1 + x_n$ é menor do que ambos os pares anteriores e $x_a + x_b$ é menor do que $x_b + x_n$, portanto o par das pontas sempre faz parte da solução ótima.
+
 ## Exercício 4
+
 Seja $G$ um grafo conexo com custo $c_e$ para cada aresta $e$. Fixe uma aresta $f$ de $G$. Prove que $f$ está em alguma MST do grafo se, e somente se, $f$ tem custo mínimo dentre todas as arestas de algum corte de $G$.
 
 1. $f$ está em alguma MST do grafo $\Rightarrow$ $f$ tem custo mínimo dentre todas as arestas de algum corte de $G$
