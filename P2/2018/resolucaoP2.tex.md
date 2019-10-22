@@ -1,3 +1,29 @@
+## Exercício 2
+
+```#include "bits/stdc++.h"
+using namespace std;
+
+int pd[1010];
+int val[] = {1,2,5,10,20,50,100};
+int amt[] = {3,2,1,0,2,1,2};
+
+int main() {
+
+  pd[0] = 1;
+
+  for(int i=0;i<7;i++){ //para todas as notas
+    for(int j = 104; j>0; j--){ //para todos os trocos
+      for(int k=1;k<=amt[i];k++){
+	  if (j - k*val[i] <0)	continue;
+	  pd[j] += pd[j - k*val[i]];
+      }
+    }
+  }
+
+  cout << pd[104] << endl;
+
+}```
+
 ## Exercício 4
 
 Seja $G$ um grafo conexo com custo $c_e$ para cada aresta $e$. Fixe uma aresta $f$ de $G$. Prove que $f$ está em alguma MST do grafo se, e somente se, $f$ tem custo mínimo dentre todas as arestas de algum corte de $G$.
