@@ -36,5 +36,26 @@ int cut_this_shit(vector<int> p, int n) {
 // Precisa adaptar pra devolver os cortes, mas o grosso eh isso ai
 ```
 
+## Cadeias de matrizes
 
+Considere uma sequência de de $n$ matrizes $M$, onde $M_i$ é a i-ésima matriz, que representa a multiplicação das $n$ matrizes, na ordem da sequência. Se pede para minimizar o número de operações de multiplicação no processo.
+$$
+M_1 M_2 \dots M_n
+$$
+A multiplicação de matrizes é associativa, então podemos fazer
+$$
+(M_1M_2)M_3 \dots M_n
+$$
+por exemplo.
 
+Queremos encontrar o custo mínimo (i.e. minimizar operações) para tal.
+
+O subproblema mais básico é o de não multiplicar nenhuma matriz, então o custo é zero. Ao multiplicar duas matrizes consecutivas ($M_iM_{i+1}$), onde $M_i$ é $p \times q$ e $M_{i+1}$ é $q \times r$, o custo é $p \cdot q \cdot r$, e forma uma matriz $p \times r$.
+
+Agora precisamos quebrar o problema maior nesses subproblemas:
+
+- Tome $d$ como o vetor que guarda as dimensões das matrizes, daí $d_{i-1}$ e $d_{i}$, então a matriz $M_i$ é $d_{i-1} \times d_i$.
+- Tome o custo da multiplicação das matrizes de $i$ até $j$ como $c_{i,j}$.
+
+- Podemos quebrar a multiplicação $M_1\dots M_n$ em $(M_1 \dots M_i)(M_{i+1}\dots M_n)$ com $i$ variando de 1 até $n-1$ e calculamos o resultado, que será dado por $\max_{i=1,\dots,n-1}\left(c_{1,i} + c_{i+1,n}\right)$.
+- Caso base: 
