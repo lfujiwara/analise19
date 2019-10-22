@@ -1,3 +1,29 @@
+## Exercício 2
+
+```#include "bits/stdc++.h"
+using namespace std;
+
+int pd[1010];
+int val[] = {1,2,5,10,20,50,100};
+int amt[] = {3,2,1,0,2,1,2};
+
+int main() {
+
+  pd[0] = 1;
+
+  for(int i=0;i<7;i++){ //para todas as notas
+    for(int j = 104; j>0; j--){ //para todos os trocos
+      for(int k=1;k<=amt[i];k++){
+	  if (j - k*val[i] <0)	continue;
+	  pd[j] += pd[j - k*val[i]];
+      }
+    }
+  }
+
+  cout << pd[104] << endl;
+
+}```
+
 ## Exercício 4
 
 Seja <img src="/P2/2018/tex/5201385589993766eea584cd3aa6fa13.svg?invert_in_darkmode&sanitize=true" align=middle width=12.92464304999999pt height=22.465723500000017pt/> um grafo conexo com custo <img src="/P2/2018/tex/6080da6c6e3253c502990ecf12d50c87.svg?invert_in_darkmode&sanitize=true" align=middle width=13.350722549999988pt height=14.15524440000002pt/> para cada aresta <img src="/P2/2018/tex/8cd34385ed61aca950a6b06d09fb50ac.svg?invert_in_darkmode&sanitize=true" align=middle width=7.654137149999991pt height=14.15524440000002pt/>. Fixe uma aresta <img src="/P2/2018/tex/190083ef7a1625fbc75f243cffb9c96d.svg?invert_in_darkmode&sanitize=true" align=middle width=9.81741584999999pt height=22.831056599999986pt/> de <img src="/P2/2018/tex/5201385589993766eea584cd3aa6fa13.svg?invert_in_darkmode&sanitize=true" align=middle width=12.92464304999999pt height=22.465723500000017pt/>. Prove que <img src="/P2/2018/tex/190083ef7a1625fbc75f243cffb9c96d.svg?invert_in_darkmode&sanitize=true" align=middle width=9.81741584999999pt height=22.831056599999986pt/> está em alguma MST do grafo se, e somente se, <img src="/P2/2018/tex/190083ef7a1625fbc75f243cffb9c96d.svg?invert_in_darkmode&sanitize=true" align=middle width=9.81741584999999pt height=22.831056599999986pt/> tem custo mínimo dentre todas as arestas de algum corte de <img src="/P2/2018/tex/5201385589993766eea584cd3aa6fa13.svg?invert_in_darkmode&sanitize=true" align=middle width=12.92464304999999pt height=22.465723500000017pt/>.
