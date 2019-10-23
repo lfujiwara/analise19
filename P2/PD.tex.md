@@ -62,3 +62,17 @@ Agora precisamos quebrar o problema maior nesses subproblemas:
 
 TODO: Algoritmo para colocar os parênteses na expressão => Ideia: Marcar ponto de divisão `bracket[i][j]`, i.e., para o subproblema $c_{i,j}$ a solução ótima é cortar a expressão em `bracket[i][j]`.
 
+## Maior subsequência comum
+
+Tome $X$ e $Y$ como sequências de letras.
+
+Considere uma terceira sequência $Z$, tal que $Z[1\dots k]$ é subsequência comum máxima de $X[1 \dots m]$ e $Y[1 \dots n]$. Existem os seguintes casos:
+
+- Se $X[m] = Y[n]$, então $Z[1 \dots k-1]$ é subsequência comum máxima de $X[1\dots m-1]$ e $Y[1 \dots m-1]$.
+- Se $X[m] \neq Y[n]$, então $Z[1\dots k]$ é subsequência comum máxima dos pares `X[1...m-1],Y[1...n]` e `X[1...m],Y[1...n-1]`
+- Se $m$ = 0 ou $n = 0$, então $Z$ é vazia.
+
+Ou seja, quebramos o problema de $m,n$ para $m-1,n$ e $m,n-1$. Dessa forma, resolvemos o problema com $m = 0$ ou $n = 0$, depois para todos os $m$ com $n = 1$, e assim sucessivamente...
+
+
+
